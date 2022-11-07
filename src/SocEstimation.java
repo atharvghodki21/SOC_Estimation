@@ -137,6 +137,12 @@ public class SocEstimation extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBounds(179, 11, 400, 392);
 		contentPane.add(panel);
+		panel.setLayout(null);
+		
+//		JLabel lblNewLabel_1 = new JLabel("ABOUT PROJECT");
+//		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
+//		lblNewLabel_1.setBounds(94, 11, 203, 51);
+//		panel.add(lblNewLabel_1);
 	}
 	
 	private class PanelButtonMouseAdapter extends MouseAdapter{
