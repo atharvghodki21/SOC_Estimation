@@ -68,7 +68,7 @@ public class SocEstimation extends JFrame {
 		
 		
 		JPanel panelMenu = new JPanel();
-		panelMenu.setBackground(new Color(128, 128, 255));
+		panelMenu.setBackground(new Color(156, 245, 245));
 //		panelMenu.setBounds(10, 25, 159, 650);
 		panelMenu.setBounds(10, 25, 200, 650);
 		contentPane.add(panelMenu);
@@ -80,7 +80,7 @@ public class SocEstimation extends JFrame {
 		
 		
 //		lblimg.setIcon(new ImageIcon(BatteryImg));
-		ImageIcon img = new ImageIcon(this.getClass().getResource("/BatteryImg.jpg"));
+		ImageIcon img = new ImageIcon(this.getClass().getResource("/img3.jpeg"));
 //		Image image = BufferedImage.getScaledInstance(800, 500, Image.SCALE_DEFAULT);
 		lblimg.setIcon(img);
 		panelMenu.add(lblimg);

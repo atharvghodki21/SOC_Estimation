@@ -91,7 +91,7 @@ public class SOC_CalculatorPanel extends JPanel {
 	                
 	              //----------------------------------------------------------------------
 
-	                if(Ib_in_float> 0) {  //MAIN WALA IF CINDITION
+	                if(Ib_in_float> 0) {  //MAIN WALA IF CONDITION
 	                    if(Vb_in_float == 4.2 && Ib_in_float == 55)
 	                    {  // YE WALI CONDITION NAHI CHAL RAHI. PATA NAHI Q
 
@@ -103,47 +103,52 @@ public class SOC_CalculatorPanel extends JPanel {
 	                    {
 //	                        System.exit(0);
 //	                        int input3 = JOptionPane.showConfirmDialog((jFrame, "SOC is equal to SOH");
-	                        int input3 = JOptionPane.showConfirmDialog(null, "SOC is equal to SOH.");
-
-	                        if (input3 == 0) {
-
-	                        }
+//	                        int input3 = JOptionPane.showConfirmDialog(null, "SOC is equal to SOH.");
+//
+//	                        if (input3 == 0) {
+//
+//	                        }
+	                    	JOptionPane.showMessageDialog(null, "SOC is equal to SOH.");
 	                    }
 	                    }
 
 
 	                    if(Vb_in_float < 4.2 && Ib_in_float < 55)
 	                    {
-	                        int input = JOptionPane.showConfirmDialog(null, "Charging Mode !!");
-	                        if (input == 0) {
-
-	                        }
+//	                        int input = JOptionPane.showConfirmDialog(null, "Charging Mode On!!");
+//	                        if (input == 0) {
+//
+//	                        }
+	                    	JOptionPane.showMessageDialog(null, "Charging Mode On!!");
 	                    }
 
 
 	                    if(Vb_in_float > 4.2 || Ib_in_float > 55)
 	                    {
 	                        if (Ib_in_float> 55 && Vb_in_float>4.2) {
-	                            int input = JOptionPane.showConfirmDialog(null, "Maximum limit Reached due to both parameters.");
-	                            if (input == 0) {
-
-	                            }
+//	                            int input = JOptionPane.showConfirmDialog(null, "Maximum limit Reached due to both parameters.");
+//	                            if (input == 0) {
+//
+//	                            }
+	                        	JOptionPane.showMessageDialog(null, "Maximum limit Reached due to both parameters.");
 	                        }
 
 	                        else if (Vb_in_float > 4.2)
 	                        {
-	                            int input1 = JOptionPane.showConfirmDialog(null, "Maximum limit Reached due to overvoltage.");
-	                            if (input1 == 0) {
-
-	                            }
+//	                            int input1 = JOptionPane.showConfirmDialog(null, "Maximum limit Reached due to overvoltage.");
+//	                            if (input1 == 0) {
+//
+//	                            }
+	                        	JOptionPane.showMessageDialog(null, "Maximum limit Reached due to overvoltage.");
 	                        }
 
 	                        else if (Ib_in_float > 55)
 	                        {
-	                            int input2 = JOptionPane.showConfirmDialog(null, "Maximum limit Reached due to overcurrent.");
-	                            if (input2 == 0) {
-
-	                            }
+//	                            int input2 = JOptionPane.showConfirmDialog(null, "Maximum limit Reached due to overcurrent.");
+//	                            if (input2 == 0) {
+//
+//	                            }
+	                        	JOptionPane.showMessageDialog(null,  "Maximum limit Reached due to overcurrent.");
 	                        }
 
 	                    }
@@ -151,22 +156,31 @@ public class SOC_CalculatorPanel extends JPanel {
 	                }
 	                
 	                else {  // MAIN WALE IF KA ELSE CONDITION
-	                    int input = JOptionPane.showConfirmDialog(null, "Disharging Mode !!");
+//	                    int input = JOptionPane.showConfirmDialog(null, "Disharging Mode !!");
+	                    JOptionPane.showMessageDialog(null,  "Disharging Mode !!");
 
 	                    if (Vb_in_float > 2.4)
 	                    {
-	                        int input2 = JOptionPane.showConfirmDialog(null, "SOC is " + SOC_in_String );
+//	                        int input2 = JOptionPane.showConfirmDialog(null, "SOC is " + SOC_in_String );
+	                    	JOptionPane.showMessageDialog(null,  "SOC is " + SOC_in_String);
 	                    }
 	                    else { // Ye wali condition nahi samjhi. Jo nhi hai jaisa ka waisa likh diya.
-	                        int input2 = JOptionPane.showConfirmDialog(null, "SOC is " + NewDOD_in_String );
+//	                        int input2 = JOptionPane.showConfirmDialog(null, "SOC is " + NewDOD_in_String );
+	                        JOptionPane.showMessageDialog(null,  "SOC is " + NewDOD_in_String);
 	                    }
 	                }
 	                
 				} // Try Block Ends
 				
+				catch (Exception ex) {
+					ex.printStackTrace();
+					JOptionPane.showMessageDialog(null, "Please enter all the required parameters.");
+				}
+				
 				finally {
 //					int input = JOptionPane.showConfirmDialog(null, "Please enter all the required parameters.");
-					JOptionPane.showMessageDialog(null, "Please enter all the required parameters.");
+					
+//					JOptionPane.showMessageDialog(null, "Please enter all the required parameters.");
 				} // Finally Block Ends
                 
 			}  // MouseClicked Function Ends
@@ -226,7 +240,7 @@ public class SOC_CalculatorPanel extends JPanel {
 		jTextField_Vb.setBounds(747, 274, 86, 20);
 		add(jTextField_Vb);
 		
-		JLabel lblNewLabel_1 = new JLabel("This calculator calculates the State of Charge (SOC) and State of Health (SOH) of Lithium-ion batteries.");
+		JLabel lblNewLabel_1 = new JLabel("This calculator calculates the State of Charge (SOC) and State of Health (SOH) of Lithium-ion");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel_1.setBounds(194, 473, 765, 35);
 		add(lblNewLabel_1);
@@ -236,9 +250,14 @@ public class SOC_CalculatorPanel extends JPanel {
 		lblNewLabel_2.setBounds(194, 519, 765, 35);
 		add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("discharging mode of the battery to be tested.");
+		JLabel lblNewLabel_3 = new JLabel("discharging mode of the battery to be tested. Max. value for Ib is 55 mA and Max value for Vb");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel_3.setBounds(194, 565, 765, 35);
 		add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("is 4.2 Volts");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel_4.setBounds(194, 604, 765, 35);
+		add(lblNewLabel_4);
 	}
 }
