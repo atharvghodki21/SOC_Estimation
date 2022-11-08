@@ -47,8 +47,9 @@ public class SocEstimation extends JFrame {
 	 * Create the frame.
 	 */
 	public SocEstimation() {
+		setTitle("SOC Calculator Application");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 605, 453);
+		setBounds(100, 100, 605, 445);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(128, 128, 192));
 		setLocationRelativeTo(null);
@@ -66,16 +67,18 @@ public class SocEstimation extends JFrame {
 		
 		
 		
-		
 		JPanel panelMenu = new JPanel();
 		panelMenu.setBackground(new Color(128, 128, 255));
-		panelMenu.setBounds(10, 11, 159, 392);
+//		panelMenu.setBounds(10, 25, 159, 650);
+		panelMenu.setBounds(10, 25, 200, 650);
 		contentPane.add(panelMenu);
 		panelMenu.setLayout(null);
 		
 		JLabel lblimg = new JLabel("Battery Image");
 		lblimg.setBackground(new Color(255, 255, 255));
-		lblimg.setBounds(10, 11, 139, 116);
+		lblimg.setBounds(10, 11, 180, 180);
+		
+		
 //		lblimg.setIcon(new ImageIcon(BatteryImg));
 		ImageIcon img = new ImageIcon(this.getClass().getResource("/BatteryImg.jpg"));
 //		Image image = BufferedImage.getScaledInstance(800, 500, Image.SCALE_DEFAULT);
@@ -98,7 +101,7 @@ public class SocEstimation extends JFrame {
 		
 		paneAboutProject.setForeground(new Color(128, 0, 255));
 		paneAboutProject.setBackground(new Color(128, 0, 255));
-		paneAboutProject.setBounds(10, 154, 139, 45);
+		paneAboutProject.setBounds(10, 250, 180, 45);
 		panelMenu.add(paneAboutProject);
 		paneAboutProject.setLayout(null);
 		
@@ -121,7 +124,7 @@ public class SocEstimation extends JFrame {
 		
 		InformationPane.addMouseListener(new PanelButtonMouseAdapter(InformationPane));
 		InformationPane.setBackground(new Color(128, 0, 255));
-		InformationPane.setBounds(10, 210, 139, 45);
+		InformationPane.setBounds(10, 350, 180, 45);
 		panelMenu.add(InformationPane);
 		
 		JLabel lblInformation = new JLabel("Information");
@@ -143,7 +146,7 @@ public class SocEstimation extends JFrame {
 		
 		paneCalculator.addMouseListener(new PanelButtonMouseAdapter(paneCalculator));
 		paneCalculator.setBackground(new Color(128, 0, 255));
-		paneCalculator.setBounds(10, 266, 139, 45);
+		paneCalculator.setBounds(10, 450, 180, 45);
 		panelMenu.add(paneCalculator);
 		
 		JLabel lblCalculator = new JLabel("SOC Calculator");
@@ -164,7 +167,8 @@ public class SocEstimation extends JFrame {
 		
 		paneAboutUS.addMouseListener(new PanelButtonMouseAdapter(paneAboutUS));
 		paneAboutUS.setBackground(new Color(128, 0, 255));
-		paneAboutUS.setBounds(10, 322, 139, 45);
+//		paneAboutUS.setBounds(10, 379, 180, 45);
+		paneAboutUS.setBounds(10, 550, 180, 45);
 		panelMenu.add(paneAboutUS);
 		
 		JLabel lblAboutUs = new JLabel("About Us");
@@ -175,7 +179,9 @@ public class SocEstimation extends JFrame {
 		paneAboutUS.add(lblAboutUs);
 		
 		JPanel paneMainContent = new JPanel();
-		paneMainContent.setBounds(179, 11, 400, 392);
+//		paneMainContent.setBounds(179, 11, 400, 392);
+//		paneMainContent.setBounds(179, 11, 484, 454);  // Current
+		paneMainContent.setBounds(230, 25, 1100, 650); // FINAL
 		contentPane.add(paneMainContent);
 		paneMainContent.setLayout(null);
 		paneMainContent.add(aboutProject);
