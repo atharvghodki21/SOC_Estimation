@@ -21,6 +21,11 @@ import java.awt.Font;
 public class SocEstimation extends JFrame {
 
 	private JPanel contentPane;
+	
+	private AboutProjectPanel aboutProject;
+	private InformationPanel infoPanel;
+	private SOC_CalculatorPanel SOC_Calculator;
+	private AboutUsPanel aboutUs;
 
 	/**
 	 * Launch the application.
@@ -53,6 +58,15 @@ public class SocEstimation extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		aboutProject = new AboutProjectPanel();
+		infoPanel = new InformationPanel();
+		SOC_Calculator = new SOC_CalculatorPanel();
+		aboutUs = new AboutUsPanel();
+		
+		
+		
+		
 		JPanel panelMenu = new JPanel();
 		panelMenu.setBackground(new Color(128, 128, 255));
 		panelMenu.setBounds(10, 11, 159, 392);
@@ -71,11 +85,12 @@ public class SocEstimation extends JFrame {
 //		-----------------------------------------------------------------------------------------------
 		
 		JPanel paneAboutProject = new JPanel();
-//		paneAboutProject.addMouseListener(new MouseAdapter() {
-//			@Override
-//			public void mouseEntered(MouseEvent e) {
-//			}
-//		});
+		paneAboutProject.addMouseListener(new PanelButtonMouseAdapter(paneAboutProject) {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MenuClicked(aboutProject);
+			}
+		});
 		
 //		paneAboutProject.addMouseListener(new MouseAdapter(paneAboutProject));
 		
@@ -96,6 +111,14 @@ public class SocEstimation extends JFrame {
 		paneAboutProject.add(lblNewLabel);
 		
 		JPanel InformationPane = new JPanel();
+		
+		InformationPane.addMouseListener(new PanelButtonMouseAdapter(InformationPane) {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MenuClicked(infoPanel);
+			}
+		});
+		
 		InformationPane.addMouseListener(new PanelButtonMouseAdapter(InformationPane));
 		InformationPane.setBackground(new Color(128, 0, 255));
 		InformationPane.setBounds(10, 210, 139, 45);
@@ -109,6 +132,15 @@ public class SocEstimation extends JFrame {
 		InformationPane.add(lblInformation);
 		
 		JPanel paneCalculator = new JPanel();
+		
+		paneCalculator.addMouseListener(new PanelButtonMouseAdapter(paneCalculator) {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MenuClicked(SOC_Calculator);
+			}
+		});
+		
+		
 		paneCalculator.addMouseListener(new PanelButtonMouseAdapter(paneCalculator));
 		paneCalculator.setBackground(new Color(128, 0, 255));
 		paneCalculator.setBounds(10, 266, 139, 45);
@@ -122,6 +154,14 @@ public class SocEstimation extends JFrame {
 		paneCalculator.add(lblCalculator);
 		
 		JPanel paneAboutUS = new JPanel();
+		
+		paneAboutUS.addMouseListener(new PanelButtonMouseAdapter(paneAboutUS) {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MenuClicked(aboutUs);
+			}
+		});
+		
 		paneAboutUS.addMouseListener(new PanelButtonMouseAdapter(paneAboutUS));
 		paneAboutUS.setBackground(new Color(128, 0, 255));
 		paneAboutUS.setBounds(10, 322, 139, 45);
@@ -134,15 +174,31 @@ public class SocEstimation extends JFrame {
 		lblAboutUs.setBackground(Color.WHITE);
 		paneAboutUS.add(lblAboutUs);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(179, 11, 400, 392);
-		contentPane.add(panel);
-		panel.setLayout(null);
+		JPanel paneMainContent = new JPanel();
+		paneMainContent.setBounds(179, 11, 400, 392);
+		contentPane.add(paneMainContent);
+		paneMainContent.setLayout(null);
+		paneMainContent.add(aboutProject);
+		paneMainContent.add(infoPanel);
+		paneMainContent.add(SOC_Calculator);
+		paneMainContent.add(aboutUs);
+		
+		MenuClicked(aboutProject);
 		
 //		JLabel lblNewLabel_1 = new JLabel("ABOUT PROJECT");
 //		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
 //		lblNewLabel_1.setBounds(94, 11, 203, 51);
 //		panel.add(lblNewLabel_1);
+	}
+	
+	
+	public void MenuClicked(JPanel panel) {
+		aboutProject.setVisible(false);
+		infoPanel.setVisible(false);
+		SOC_Calculator.setVisible(false);
+		aboutUs.setVisible(false);
+		
+		panel.setVisible(true);
 	}
 	
 	private class PanelButtonMouseAdapter extends MouseAdapter{

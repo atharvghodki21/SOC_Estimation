@@ -11,7 +11,7 @@ public class AboutProjectPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public AboutProjectPanel() {
-		setSize(400, 392);
+		setBounds(0, 0, 400, 392);
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
